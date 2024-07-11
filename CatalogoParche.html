@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Links-->
-    <link rel="stylesheet" href="Estilos.Css">
+    <link rel="stylesheet" href="CatalogoParche.Css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -12,8 +13,9 @@
         crossorigin="anonymous"></script>
     <!--Inicio de pagina-->
 
-    <title>Document</title>
+    <title>Parchando-Catalogo</title>
 </head>
+
 <body class="fondofin">
     <!--Barra de navegacion-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top  ">
@@ -27,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="HomeParchando.html">Inicio</a>
+                        <a class="nav-link active" href="Index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="Parchando.html">Parchando</a>
@@ -68,20 +70,251 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-disabled="true" href="DondeParchar.html">Donde parchar</a>
                     </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="Contactanos.html">Contactanos</a>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Contactanos.html">Contactanos</a>
+                    </li>
+                </ul>
                 <form class="d-flex " role="search">
                     <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success "  type="submit">Parchalo</button>
+                    <button class="btn btn-outline-success " type="submit">Parchalo</button>
                 </form>
             </div>
         </div>
     </nav>
     <br>
     <br>
-    <button class="btn-blue" style="font-size: large;">dfdfdfdfd</button>
-    <!--Titulo-->
+    <!--Contenido -->
+    <h2>Escoje tu Estilo</h2>
+
+    <div>
+        <div class="form-container">
+            <h2>Personaliza tu Búsqueda</h2>
+            <form id="personalization-form">
+                <!-- Para quién es -->
+                <div class="mb-3">
+                    <label class="form-label">¿Lo que buscas es para ti?</label>
+                    <div>
+                        <input type="radio" id="para-ti-si" name="para_ti" value="Si" required>
+                        <label for="para-ti-si">Sí</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="para-ti-no" name="para_ti" value="No">
+                        <label for="para-ti-no">No</label>
+                    </div>
+                </div>
+
+                <!-- Marca favorita -->
+                <div class="mb-3">
+                    <label class="form-label">¿Qué marca te representa?</label>
+                    <select class="form-select" name="marca" required>
+                        <option value="">Selecciona una marca</option>
+                        <option value="Adidas">Adidas</option>
+                        <option value="Nike">Nike</option>
+                        <option value="Victoria Secret">Victoria Secret</option>
+                        <option value="Colombiana">Colombiana</option>
+                        <option value="Otra">Otra</option>
+                    </select>
+                </div>
+
+                <!-- Selección de talla interactiva -->
+                <div class="mb-3">
+                    <label class="form-label">Selecciona tu talla</label>
+                    <select class="form-select" name="talla" required>
+                        <option value="">Selecciona un método de tallaje</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="36">36</option>
+                        <option value="38">38</option>
+                        <option value="40">40</option>
+                        <option value="42">42</option>
+                        <option value="no_se">No sé mi talla</option>
+                    </select>
+                    <div class="help-text">
+                        <p>No te preocupes, aquí te ayudamos a encontrar tu talla. <a href="#"
+                                onclick="showSizingGuide()">Guía de Tallas</a></p>
+                    </div>
+                </div>
+
+                <!-- Estilo -->
+                <div class="mb-3">
+                    <label class="form-label">¿Cómo describirías tu estilo?</label>
+                    <select class="form-select" name="estilo" required>
+                        <option value="">Selecciona un estilo</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Formal">Formal</option>
+                        <option value="Deportivo">Deportivo</option>
+                        <option value="Elegante">Elegante</option>
+                        <option value="Urbano">Urbano</option>
+                    </select>
+                </div>
+
+                <!-- Género -->
+                <div class="mb-3">
+                    <label class="form-label">¿Cuál es tu género?</label>
+                    <select class="form-select" name="genero" required>
+                        <option value="">Selecciona un género</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <!-- Color favorito -->
+                <div class="mb-3">
+                    <label class="form-label">¿Cuál es tu color favorito?</label>
+                    <input type="text" class="form-control" name="color" required>
+                </div>
+
+                <!-- Ocación -->
+                <div class="mb-3">
+                    <label class="form-label">¿Para qué ocasión estás comprando?</label>
+                    <select class="form-select" name="ocasion" required>
+                        <option value="">Selecciona una ocasión</option>
+                        <option value="Trabajo">Trabajo</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Deportivo">Deportivo</option>
+                        <option value="Fiesta">Fiesta</option>
+                        <option value="Formal">Formal</option>
+                    </select>
+                </div>
+
+                <!-- Rango de precios -->
+                <div class="mb-3">
+                    <label class="form-label">¿Cuál es tu rango de precios?</label>
+                    <input type="range" class="form-range" name="precio" min="0" max="1000" step="10"
+                        oninput="this.nextElementSibling.value = this.value">
+                    <output>500</output>
+                </div>
+
+                <!-- Sentimiento -->
+                <div class="mb-3">
+                    <label class="form-label">¿Cómo te quieres sentir?</label>
+                    <select class="form-select" name="sentimiento" required>
+                        <option value="">Selecciona un sentimiento</option>
+                        <option value="Confiado">Confiado</option>
+                        <option value="Cómodo">Cómodo</option>
+                        <option value="Atrevido">Atrevido</option>
+                        <option value="Elegante">Elegante</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </div>
+        <hr>
+        <div class="card-container">
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-azul-L-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-azul-L-2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-blanco-L-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-gris-L-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-negro-L-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-gris-L-2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-naranja-L-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-naranja-L-2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-negro-L-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="imagenes/Catalogo/Camiseta-puma-negro-L-3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>
